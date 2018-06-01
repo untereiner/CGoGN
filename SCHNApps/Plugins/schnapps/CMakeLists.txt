@@ -92,6 +92,5 @@ ADD_LIBRARY( SCHNAppsLib SHARED
 TARGET_LINK_LIBRARIES( SCHNAppsLib
 	${CGoGN_LIBS}
 	${EXT_LIBS}
+        Qt5::Core Qt5::Gui Qt5::OpenGL Qt5::Xml Qt5::Svg
 )
-
-qt_use_modules(SCHNAppsLib Core Gui OpenGL Xml Svg)

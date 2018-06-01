@@ -14,8 +14,8 @@ IF (CGoGN_WITH_QT)
 
 	qt_wrap_cpp(tilings_moc tilings.h)
 	add_executable(tilings tilings.cpp  ${tilings_moc})
-	target_link_libraries(tilings ${CGoGN_LIBS} ${CGoGN_EXT_LIBS})
-	qt_use_cgogn_modules(tilings)
+	target_link_libraries(tilings ${CGoGN_LIBS} ${CGoGN_EXT_LIBS})	
+        target_link_libraries(tilings Qt5::Gui Qt5::OpenGL Qt5::Xml Qt5::Svg Qt5::Widgets)
 
 	qt_wrap_ui( test_traversor2_ui test_traversor2.ui )
 	qt_wrap_cpp(test_traversor2_moc test_traversor2.h)

@@ -11,7 +11,7 @@ IF (CGoGN_WITH_QT)
 	add_executable( tuto1 tuto1.cpp ${tuto1_moc})
 	target_link_libraries( tuto1
 		${CGoGN_LIBS}  ${CGoGN_EXT_LIBS} )
-	qt_use_cgogn_modules(tuto1)
+        target_link_libraries(tuto1 Qt5::Gui Qt5::OpenGL Qt5::Xml Qt5::Svg Qt5::Widgets)
 
 	qt_wrap_ui( tuto2_ui tuto2.ui )
 	qt_wrap_cpp(tuto2_moc tuto2.h)

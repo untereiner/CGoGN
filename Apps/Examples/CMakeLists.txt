@@ -13,7 +13,7 @@ qt_wrap_cpp( frame_manip_moc frame_manip.h )
 add_executable( frame_manip frame_manip.cpp ${frame_manip_moc} )
 target_link_libraries( frame_manip ${CGoGN_LIBS} ${CGoGN_EXT_LIBS} )
 #need to define that we use Qt (only once per cmake directory!)
-qt_use_cgogn_modules(frame_manip)
+target_link_libraries(frame_manip Qt5::Gui Qt5::OpenGL Qt5::Xml Qt5::Svg Qt5::Widgets)
 
 qt_wrap_cpp( texturesExample_moc texturesExample.h )
 add_executable( texturesExample texturesExample.cpp ${texturesExample_moc} )

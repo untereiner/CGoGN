@@ -10,9 +10,7 @@ add_subdirectory(Utils)
 #define exec to compile
 
 add_executable( Geom_orientation ./Geom_orientation.cpp)
-target_link_libraries( Geom_orientation
-	${CGoGN_LIBS} ${CGoGN_EXT_LIBS})
-qt_use_modules(Geom_orientation Gui OpenGL Xml Svg)
+target_link_libraries( Geom_orientation ${CGoGN_LIBS} ${CGoGN_EXT_LIBS} Qt5::Gui Qt5::OpenGL Qt5::Xml Qt5::Svg)
 
 add_executable( Geom_inclusion ./Geom_inclusion.cpp)
 target_link_libraries( Geom_inclusion

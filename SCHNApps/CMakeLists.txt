@@ -133,17 +133,10 @@ file(
 	${SCHNApps_ROOT_DIR}/src/main.cpp
 )
 
-ADD_EXECUTABLE( SCHNApps
-	${SCHNApps_FILES}
-)
+ADD_EXECUTABLE(SCHNApps ${SCHNApps_FILES})
 
-TARGET_LINK_LIBRARIES( SCHNApps
-	SCHNAppsLib
-	${CGoGN_LIBS}
-	${EXT_LIBS}
-)
+TARGET_LINK_LIBRARIES( SCHNApps SCHNAppsLib ${CGoGN_LIBS} ${EXT_LIBS} Qt5::Core Qt5::Gui Qt5::OpenGL Qt5::Xml Qt5::Svg)
 
-qt_use_modules(SCHNApps Core Gui OpenGL Xml Svg)
 
 IF(IS_DIRECTORY ${SCHNApps_ROOT_DIR}/../../Plugins)
 	ADD_SUBDIRECTORY(${SCHNApps_ROOT_DIR}/../../Plugins ExtPlugins)

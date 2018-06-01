@@ -18,7 +18,7 @@ INCLUDE(${CGoGN_ROOT_DIR}/cmake_modules/functions.cmake)
 SET ( CGoGN_WITH_ASSIMP OFF CACHE BOOL "build CGoGN with Assimp" )
 SET ( CGoGN_WITH_ZINRI OFF CACHE BOOL "build CGoGN with Zinri lib" )
 SET ( CGoGN_WITH_QT ON CACHE BOOL "build CGoGN with Qt lib" )
-SET ( CGoGN_DESIRED_QT_VERSION "4" CACHE STRING "4: QT4/5" )
+SET ( CGoGN_DESIRED_QT_VERSION "5" CACHE STRING "5: QT4/5" )
 SET ( CGoGN_WITH_GLEWMX OFF CACHE BOOL "use multi-contex GLEW (for VRJuggler)" )
 SET ( CGoGN_USE_OGL_CORE_PROFILE OFF CACHE BOOL "use OpenGL 3.3 core profile (do not work on mac)" )
 

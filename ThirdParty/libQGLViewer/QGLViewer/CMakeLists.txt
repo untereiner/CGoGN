@@ -1,6 +1,8 @@
 PROJECT(QGLViewer)
 FIND_PACKAGE(OpenGL REQUIRED)
 
+find_package(Qt5 COMPONENTS Core OpenGL Xml Svg Gui Widgets REQUIRED)
+
 # in order to be able to include generated files (ui and moc)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
@@ -97,11 +99,7 @@ endif()
 
 
 add_library(QGLViewer SHARED ${HEADER_FILES} ${MOC_FILES} ${MOC_UI_FILES} ${FORM_FILES} ${SOURCE_FILES})
-target_link_libraries(QGLViewer  ${OPENGL_LIBRARY})
-qt_use_modules(QGLViewer Core OpenGL Xml Svg Gui)
-IF(${CGoGN_DESIRED_QT_VERSION} STREQUAL "5")
-	qt_use_modules(QGLViewer Widgets)
-ENDIF()
+target_link_libraries(QGLViewer ${OPENGL_LIBRARY} Qt5::Core Qt5::OpenGL Qt5::Xml Qt5::Svg Qt5::Gui Qt5::Widgets)
 
 
 

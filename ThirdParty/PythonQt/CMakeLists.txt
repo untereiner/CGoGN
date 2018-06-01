@@ -10,6 +10,8 @@ cmake_minimum_required(VERSION 2.8.11)
 project(PythonQt)
 #-----------------------------------------------------------------------------
 
+find_package(Qt5 COMPONENTS Core Gui Widgets Xml REQUIRED)
+
 #-----------------------------------------------------------------------------
 # Python libraries
 
@@ -201,7 +203,7 @@ add_library(${PROJECT_NAME} SHARED
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE PYTHONQT_EXPORTS)
 
-    qt_use_modules(${PROJECT_NAME} Core Gui)
+target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Xml)
 
 target_link_libraries(${PROJECT_NAME}
               ${PYTHON_LIBRARIES}
